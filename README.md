@@ -1,6 +1,6 @@
 # MethylBeta | DMP Analysis Package
 
-![methyBeta](https://github.com/user-attachments/assets/5af6936b-de90-4b86-b98b-604c6e487f17)
+![MethylBeta_readme](https://github.com/user-attachments/assets/01a94656-c360-4e0c-ad08-32c986192544)
 
 ## Overview
 
