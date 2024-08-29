@@ -1,5 +1,7 @@
 # MethylBeta | DMP Analysis Package
 
+![methyBeta](https://github.com/user-attachments/assets/5af6936b-de90-4b86-b98b-604c6e487f17)
+
 ## Overview
 
 This R package provides tools for analyzing differentially methylated positions (DMPs) using beta regression. It includes functions for regression analysis, filtering significant DMPs, and visualizing results.
