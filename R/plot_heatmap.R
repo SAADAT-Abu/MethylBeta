@@ -17,7 +17,7 @@ plot_heatmap <- function(beta_matrix, dmps) {
   significant_beta_matrix <- beta_matrix[rownames(beta_matrix) %in% rownames(dmps), ]
   
   # Plot the heatmap
-  pheatmap(significant_beta_matrix, cluster_rows = TRUE, cluster_cols = TRUE,
+  pheatmap::pheatmap(significant_beta_matrix, cluster_rows = TRUE, cluster_cols = TRUE,
            show_rownames = TRUE, show_colnames = TRUE,
            main = "Heatmap of Significant DMPs")
 }
