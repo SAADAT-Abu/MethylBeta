@@ -14,19 +14,6 @@
 #' }
 #' @export
 beta.fit <- function(beta_matrix, sample_groups, chunk_size = 100, num_cores = 2) {
-  # Load necessary packages
-  if (!requireNamespace("betareg", quietly = TRUE)) {
-    install.packages("betareg")
-  }
-  if (!requireNamespace("parallel", quietly = TRUE)) {
-    install.packages("parallel")
-  }
-  if (!requireNamespace("tidyverse", quietly = TRUE)) {
-    install.packages("tidyverse")
-  }
-  library(betareg)
-  library(parallel)
-  library(tidyverse)
 
   # Clean CpG IDs to remove numeric prefixes followed by a dot
   rownames(beta_matrix) <- sub("^[0-9]+\\.", "", rownames(beta_matrix))
@@ -59,6 +46,7 @@ beta.fit <- function(beta_matrix, sample_groups, chunk_size = 100, num_cores = 2
       # Calculating MeanDiff
 
       mean_diff <- mean(beta[sample_groups == levels(sample_groups)[2]]) - mean(beta[sample_groups == levels(sample_groups)[1]])
+      
       # Store the results in a list
       chunk_results[[cpg]] <- c(
         Phi = phi,
@@ -90,7 +78,7 @@ beta.fit <- function(beta_matrix, sample_groups, chunk_size = 100, num_cores = 2
   # Apply multiple testing correction to phenotype p-values
   results_df$Phenotype_Pval_Adj <- p.adjust(results_df$Phenotype_Pval, method = "BH")
 
-  # Calculate logFC as specified
+  # Calculate logFC
   results_df$logFC <- with(results_df, ifelse(Phenotype_Coef >= 0, log2(Phenotype_Coef + 1), -log2(abs(Phenotype_Coef) + 1)))
   rownames(results_df) <- sub("^[0-9]+\\.", "", rownames(results_df))
   return(results_df[,c(1:6,8,9,7)])
