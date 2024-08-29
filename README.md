@@ -8,7 +8,7 @@ This R package provides tools for analyzing differentially methylated positions 
 
 - **Beta Regression Analysis:** Perform beta regression on methylation data to identify DMPs.
 - **Flexible Filtering:** Filter DMPs based on log fold change or mean difference.
-- **Visualization Tools:** Create volcano plots and boxplots to visualize methylation data.
+- **Visualization Tools:** Create volcano plots, heatmaps and boxplots to visualize methylation data.
 
 ## Installation
 
