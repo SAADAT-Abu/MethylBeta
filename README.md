@@ -19,4 +19,4 @@ To install the package, use the following commands in R:
 install.packages("devtools")
 
 # Install the package from GitHub
-devtools::install_github("yourusername/DMPAnalysisPackage")
+devtools::install_github("SAADAT-Abu/MethylBeta")
