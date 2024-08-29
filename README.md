@@ -1,4 +1,4 @@
-# DMP Analysis Package
+# MethylBeta | DMP Analysis Package
 
 ## Overview
 
